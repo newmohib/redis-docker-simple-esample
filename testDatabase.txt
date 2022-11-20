@@ -1,0 +1,13 @@
+docker run -p 3307:3306 --name mysql-I70r -e MYSQL_ROOT_PASSWORD=root -d mysql:oracle
+
+docker run -p 3307:3306 --name mysqlrun01 -e MYSQL_ROOT_PASSWORD=root -d mysql:oracle
+
+use testdb;
+create table users(
+   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   first_name VARCHAR(100) NOT NULL,
+   last_name VARCHAR(40) NOT NULL,
+   email VARCHAR(50) NOT NULL,
+   password  TEXT NULL,
+   creat_date DATE
+);

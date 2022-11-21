@@ -1,4 +1,3 @@
-docker run -p 3307:3306 --name mysql-I70r -e MYSQL_ROOT_PASSWORD=root -d mysql:oracle
 
 docker run -p 3307:3306 --name mysqlrun01 -e MYSQL_ROOT_PASSWORD=root -d mysql:oracle
 

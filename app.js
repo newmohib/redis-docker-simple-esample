@@ -1,22 +1,53 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require("cors");
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 5000;
-const service = require('./services/service')
 const { scheduler } = require('./services/scheduleTask')
 const { database } = require('./config/database')
+const { expressWinstonLogger, customExpressWinstonLogger, logger, customLogger } = require('./config/logger');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Scheduler 
+const port = 5000;
+
+// routers
+const redisRouters = require('./routers/redis')
+
+// Scheduler
 const task = () => {
     console.log('running a task every minute', new Date());
 }
 scheduler('*/5 * * * * *', task);
+// close scheduler
+
+
+
+// logger
+app.use(expressWinstonLogger);
+
+app.get('/', (req, res)=>{
+    //logger.info("This is an info logger message")
+    res.sendStatus(200)
+})
+
+app.get('/400', (req, res)=>{
+    res.sendStatus(400)
+})
+
+app.get('/500', (req, res)=>{
+    res.sendStatus(500)
+})
+
+app.get('/error', (req, res)=>{
+    throw new Error('This is a  custom Error')
+})
+
+app.use('/redis', redisRouters);
+
 
 app.post('/register', (req, res) => {
     const { firstName, lastName, email, password } = req.body;
@@ -35,86 +66,9 @@ app.post('/register', (req, res) => {
     });
 });
 
-app.post('/set-string', (req, res) => {
 
-    service.setString(req.body.key, req.body.value)
-        .then(result => {
-            console.log("Redis Connected", result);
-            res.send(result)
-        }).catch(err => {
-            console.error("Redis Connection Err", err);
-            res.send(err)
-        })
-});
-
-app.get('/get-string', (req, res) => {
-
-    service.getString(req.body.key)
-        .then(result => {
-            console.log("Redis Connected", result);
-            res.send(result)
-        }).catch(err => {
-            console.error("Redis Connection Err", err);
-            res.send(err)
-        })
-});
-
-app.post('/set-hash', (req, res) => {
-
-    service.setHash(req.body.key, req.body.value)
-        .then(result => {
-            console.log("Redis Connected", result);
-            res.send(result)
-        }).catch(err => {
-            console.error("Redis Connection Err", err);
-            res.send(err)
-        })
-});
-
-app.get('/get-hash', (req, res) => {
-
-    service.getHash(req.body.key, req.body.field)
-        .then(result => {
-            console.log("Redis Connected", result);
-            res.send(result)
-        }).catch(err => {
-            console.error("Redis Connection Err", err);
-            res.send(err)
-        })
-});
-
-app.get('/get-all-hash', (req, res) => {
-    service.getALlHash(req.body.key)
-        .then(result => {
-            console.log("Redis Connected", result);
-            res.send(result)
-        }).catch(err => {
-            console.error("Redis Connection Err", err);
-            res.send(err)
-        })
-});
-
-// app.post('/set-json', (req, res) => {
-//     service.setStreams(req.body.key, req.body.fieldName, req.body.value)
-//         .then(result => {
-//             console.log("Redis Connected", result);
-//             res.send(result)
-//         }).catch(err => {
-//             console.error("Redis Connection Err", err);
-//             res.send(err)
-//         })
-// });
-
-// app.get('/get-json', (req, res) => {
-//     service.getStreams(req.body.key)
-//         .then(result => {
-//             console.log("Redis Connected", result);
-//             res.send(result)
-//         }).catch(err => {
-//             console.error("Redis Connection Err", err);
-//             res.send(err)
-//         })
-// });
+// custom Logger
+app.use(customExpressWinstonLogger);
 
 app.listen(port, () => {
     console.log('app listening on port!', port);

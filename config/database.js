@@ -1,4 +1,5 @@
 const mysql = require('mysql2');
+// const logger = require('./logger');
 
 const database = mysql.createConnection({
   host     : 'localhost',
@@ -11,6 +12,7 @@ const database = mysql.createConnection({
 database.connect((err)=> {
     if (err) {
       console.error('error connecting: ' + err.stack);
+      //logger.log("error", "Database Err "+ err)
       return;
     }
     console.log('connected as id ' + database.threadId);

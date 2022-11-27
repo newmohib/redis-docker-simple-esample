@@ -1,0 +1,192 @@
+{
+  level: 'error',
+  message: 'HTTP GET /error',
+  metadata: {
+    meta: {
+      req: {
+        url: '/error',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/error',
+        query: {}
+      },
+      res: { statusCode: 500 },
+      responseTime: 11
+    },
+    timestamp: '2022-11-27T18:30:42.904Z'
+  }
+}
+{
+  level: 'error',
+  message: 'HTTP GET /error',
+  metadata: {
+    meta: {
+      req: {
+        url: '/error',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/error',
+        query: {}
+      },
+      res: { statusCode: 500 },
+      responseTime: 13
+    },
+    timestamp: '2022-11-27T18:47:18.088Z'
+  }
+}
+{
+  level: 'error',
+  message: 'HTTP GET /error',
+  metadata: {
+    meta: {
+      req: {
+        url: '/error',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/error',
+        query: {}
+      },
+      res: { statusCode: 500 },
+      responseTime: 13
+    },
+    timestamp: '2022-11-27T18:49:56.836Z'
+  }
+}
+{
+  level: 'error',
+  message: 'HTTP GET /error',
+  metadata: {
+    meta: {
+      req: {
+        url: '/error',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/error',
+        query: {}
+      },
+      res: { statusCode: 500 },
+      responseTime: 10
+    },
+    timestamp: '2022-11-27T18:51:58.300Z'
+  }
+}
+{
+  level: 'error',
+  message: 'HTTP GET /error',
+  metadata: {
+    meta: {
+      req: {
+        url: '/error',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/error',
+        query: {}
+      },
+      res: { statusCode: 500 },
+      responseTime: 10
+    },
+    timestamp: '2022-11-27T18:53:38.519Z'
+  }
+}
+{
+  level: 'error',
+  message: 'HTTP GET /error',
+  metadata: {
+    meta: {
+      req: {
+        url: '/error',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/error',
+        query: {}
+      },
+      res: { statusCode: 500 },
+      responseTime: 110
+    },
+    timestamp: '2022-11-27T18:54:04.374Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /400',
+  metadata: {
+    meta: {
+      req: {
+        url: '/400',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/400',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 9
+    },
+    timestamp: '2022-11-27T18:57:27.962Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP GET /400',
+  metadata: {
+    meta: {
+      req: {
+        url: '/400',
+        headers: {
+          'user-agent': 'vscode-restclient',
+          'accept-encoding': 'gzip, deflate',
+          host: 'localhost:5000',
+          connection: 'close'
+        },
+        method: 'GET',
+        httpVersion: '1.1',
+        originalUrl: '/400',
+        query: {}
+      },
+      res: { statusCode: 400 },
+      responseTime: 8
+    },
+    timestamp: '2022-11-27T19:38:20.731Z'
+  }
+}
